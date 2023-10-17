@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:insert="~{fragments/head :: head}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <h1>Cadastrar usuários</h1>
+    <div th:if="${mensagem}">
+        <div class="alert alert-success" role="alert" th:text="${mensagem}"></div>
+    </div>
+    <div th:insert="~{fragments/formularioUsuario :: formularioUsuario}"></div>
+    <div th:insert="~{fragments/tabelaUsuario :: tabelaUsuario}"></div>
+    
+    
+
+
+
+</body>
+
+</html>

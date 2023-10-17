@@ -1,0 +1,28 @@
+<table class="table" th:fragment="tabelaUsuario">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="usuario: ${usuarios}">
+            <td th:text="${usuario.id}"></td>
+            <td th:text="${usuario.nome}"></td>
+            <td th:text="${usuario.email}"></td>
+            <td th:text="${usuario.senha}"></td>
+            <td>
+                <form th:action="@{/deletar/{id}(id=${usuario.id})}">
+                    <input type="submit" class="btn btn-danger" value="Deletar">
+                </form>
+            </td>
+            <td>
+                <form th:action="@{/editar/{id}(id=${usuario.id})}">
+                    <input type="submit" class="btn btn-warning" value="Editar">
+                </form>
+            </td>
+        </tr>
+    </tbody>
+</table>
